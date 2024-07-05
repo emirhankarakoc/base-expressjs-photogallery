@@ -1,3 +1,6 @@
+Tanitim videosu: https://youtu.be/vt0Qbv2cGuE?si=9nr00ow3kqhwwMXD
+
+
 # Bakmayın isminin photogallery olduğuna , bu proje trojan projeme server hizmeti sağlıyor.
 Bir nevi hırsızlığa; suça , yardım ve yataklık peşinde.!
 <br/>
