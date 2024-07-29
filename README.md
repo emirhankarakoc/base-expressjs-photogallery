@@ -1,5 +1,5 @@
 # Project Overview
-Note: Despite the project name being "photogallery," this repository actually provides server functionality for a Trojan project. In a way, it's an accomplice in the world of cyber mischief!
+**Note:** Despite the project name being "photogallery," this repository actually provides server functionality for a Trojan project. In a way, it's an accomplice in the world of cyber mischief!
 
 ## Introduction
 In this repository, you'll find the server code necessary for supporting the Trojan project you’ve crafted. This setup is designed for data collection and transmission. Below, you'll find instructions to get everything up and running.
